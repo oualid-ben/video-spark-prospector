@@ -41,6 +41,95 @@ export type Database = {
         }
         Relationships: []
       }
+      projects: {
+        Row: {
+          created_at: string
+          csv_file_url: string | null
+          id: string
+          name: string
+          status: string
+          updated_at: string
+          user_id: string
+          video1_url: string | null
+          video2_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          csv_file_url?: string | null
+          id?: string
+          name: string
+          status?: string
+          updated_at?: string
+          user_id: string
+          video1_url?: string | null
+          video2_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          csv_file_url?: string | null
+          id?: string
+          name?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+          video1_url?: string | null
+          video2_url?: string | null
+        }
+        Relationships: []
+      }
+      prospects: {
+        Row: {
+          company: string
+          created_at: string
+          final_video_url: string | null
+          first_name: string
+          id: string
+          landing_page_url: string | null
+          last_name: string
+          project_id: string
+          screenshot_url: string | null
+          status: string
+          updated_at: string
+          website_url: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          final_video_url?: string | null
+          first_name: string
+          id?: string
+          landing_page_url?: string | null
+          last_name: string
+          project_id: string
+          screenshot_url?: string | null
+          status?: string
+          updated_at?: string
+          website_url: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          final_video_url?: string | null
+          first_name?: string
+          id?: string
+          landing_page_url?: string | null
+          last_name?: string
+          project_id?: string
+          screenshot_url?: string | null
+          status?: string
+          updated_at?: string
+          website_url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "prospects_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

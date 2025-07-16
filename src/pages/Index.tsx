@@ -47,37 +47,9 @@ const Index = () => {
     );
   }
 
-  return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">PersonalisedVideo</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">
-              Bienvenue, {user.email}
-            </span>
-            <Button variant="outline" onClick={handleSignOut}>
-              Déconnexion
-            </Button>
-          </div>
-        </div>
-      </header>
-      
-      <main className="container mx-auto px-4 py-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Générateur de vidéos de prospection
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Uploadez votre CSV et vos vidéos pour commencer
-          </p>
-          <Button size="lg">
-            Créer un nouveau projet
-          </Button>
-        </div>
-      </main>
-    </div>
-  );
+  // Redirect authenticated users to dashboard
+  navigate("/dashboard");
+  return null;
 };
 
 export default Index;
